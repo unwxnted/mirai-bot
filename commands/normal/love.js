@@ -33,11 +33,11 @@ module.exports = {
             .setTitle(`Love percent: ${lovePercent}%`)
             .setColor("#FF007F")
             .setDescription(`${loved.displayName} and ${message.author.username} : ${messageOfLove }`)
-            .setFooter("Developed By F4STZ", client.user.avatarURL)
+            .setFooter("Developed By weakness", client.user.avatarURL)
             .setThumbnail()
             .setImage(imageOfLove)
                 
-            message.channel.send({embed});
+            message.channel.send({ embeds: [embed] })
         
         }else{
             errorEmbed.execute(client, message, "Please mention a member");

@@ -10,11 +10,11 @@ module.exports = {
         .setTitle("ERROR")
         .setColor("#AE0028")
         .setDescription(string)
-        .setFooter("Developed By F4STZ", client.user.avatarURL)
+        .setFooter("Developed By weakness", client.user.avatarURL)
         .setImage(images.ErrorIMAGE)
         .setThumbnail(message.author.avatarURL)
     
-        message.channel.send({embed});
+        message.channel.send({ embeds: [embed] })
 
     }
 

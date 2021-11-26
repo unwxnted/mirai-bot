@@ -12,7 +12,7 @@ module.exports = {
         
         if(member){
 
-            if(message.member.hasPermission("KICK_MEMBERS")){
+            if(message.member.permissions.has("KICK_MEMBERS")){
 
 
                 member.kick().then((member) => {
@@ -21,11 +21,11 @@ module.exports = {
                     .setTitle(member.displayName + " Has Been Kicked")
                     .setColor("#33FF00")
                     .setDescription(member.displayName + " Has Been Kicked By " + message.author.username)
-                    .setFooter("Developed By F4STZ", client.user.avatarURL)
+                    .setFooter("Developed By weakness", client.user.avatarURL)
                     .setImage(images.Kicked)
                     .setThumbnail(message.author.avatarURL)
 
-                    message.channel.send({embed});
+                    message.channel.send({ embeds: [embed] })
 
 
                 }).catch(() => {

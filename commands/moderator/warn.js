@@ -11,16 +11,16 @@ module.exports = {
 
         if(member){
 
-            if(message.member.hasPermission("KICK_MEMBERS")){
+            if(message.member.permissions.has("KICK_MEMBERS")){
 
                 let embed = new Discord.MessageEmbed()
                 .setTitle(member.displayName + " Has Been Warned")
                 .setColor("#33FF00")
                 .setDescription(member.displayName + " is a bad boy...")
-                .setFooter("Developed By F4STZ", client.user.avatarURL)
+                .setFooter("Developed By weakness", client.user.avatarURL)
                 .setImage(images.Warn)
             
-                message.channel.send({embed});
+                message.channel.send({ embeds: [embed] })
     
             }else{
                 errorEmbed.execute(client, message, "You Dont have Access to this Action");

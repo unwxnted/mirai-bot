@@ -32,11 +32,11 @@ module.exports = {
             .setTitle(`New animes:`)
             .setColor("#43960C")
             .setDescription(`${newLinks}`)
-            .setFooter("Developed By F4STZ", client.user.avatarURL)
+            .setFooter("Developed By weakness", client.user.avatarURL)
             .setThumbnail()
             .setImage()
                 
-            message.channel.send({embed});
+            message.channel.send({ embeds: [embed] })
 
 
     }

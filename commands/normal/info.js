@@ -42,9 +42,9 @@ module.exports = {
             .addField(`roles: ${roles}`)
             .addField(`avatar: `)*/
             .setImage(avatarURL)
-            .setFooter("Developed By F4STZ")
+            .setFooter("Developed By weakness")
             
-            message.channel.send(embed);
+            message.channel.send({ embeds: [embed] })
         
         }else{
             errorEmbed.execute(client, message, "Please mention a member");

@@ -12,7 +12,7 @@ module.exports = {
     
         if(member){
 
-            if(message.member.hasPermission("BAN_MEMBERS")){
+            if(message.member.permissions.has("BAN_MEMBERS")){
             
 
                 member.ban().then((member) => {
@@ -21,11 +21,11 @@ module.exports = {
                     .setTitle(member.displayName + " Has Been Banned")
                     .setColor("#33FF00")
                     .setDescription(member.displayName + " Has Been Banned By " + message.author.username)
-                    .setFooter("Developed By F4STZ", client.user.avatarURL)
+                    .setFooter("Developed By weakness", client.user.avatarURL)
                     .setImage(images.Banned)
                     .setThumbnail(message.author.avatarURL)
 
-                    message.channel.send({embed});
+                    message.channel.send({ embeds: [embed] })
 
 
 

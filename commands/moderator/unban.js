@@ -10,7 +10,7 @@ module.exports = {
 
         var args = message.content.toLowerCase().split(" ");
 
-        if(message.member.hasPermission("ADMINISTRATOR")){
+        if(message.member.permissions.has("ADMINISTRATOR")){
 
             if(parseInt((args[1]))){
 
@@ -20,11 +20,11 @@ module.exports = {
                     .setTitle(args[1] + " Has Been Unbanned")
                     .setColor("#33FF00")
                     .setDescription(args[1] + " Has Been UnBanned By " + message.author.username)
-                    .setFooter("Developed By F4STZ", client.user.avatarURL)
+                    .setFooter("Developed By weakness", client.user.avatarURL)
                     .setImage(images.unban) 
                     .setThumbnail(message.author.avatarURL)
 
-                    message.channel.send({embed});
+                    message.channel.send({ embeds: [embed] })
 
                 }).catch(() => {
                     

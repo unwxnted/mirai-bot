@@ -28,11 +28,11 @@ module.exports = {
             .setTitle(`Commands: `)
             .setColor("#43960C")
             .setDescription(`${helpMessage}`)
-            .setFooter("Developed By F4STZ", client.user.avatarURL)
+            .setFooter("Developed By weakness", client.user.avatarURL)
             .setThumbnail()
             .setImage()
                 
-            message.channel.send({embed});
+            message.channel.send({ embeds: [embed] })
 
     }
 
