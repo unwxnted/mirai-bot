@@ -24,7 +24,7 @@ module.exports = {
 
          var newLinks = "";
     
-         for(var i=0; i < links.length; i = i + 2){
+         for(var i=0; i < links.length; i = i + 1){
             newLinks = newLinks + `https://ww1.animeflv.cc${links[i].link}` + "\n";
         }
 
