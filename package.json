@@ -1,0 +1,28 @@
+{
+  "name": "mirai-bot",
+  "version": "1.0.0",
+  "description": "I made a discord bot in node js",
+  "main": "server.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "discord.js": "^13.3.1",
+    "nodemon": "^2.0.4",
+    "request": "^2.65.0",
+    "request-promise": "^4.2.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unwxnted/mirai-bot.git"
+  },
+  "keywords": [],
+  "author": "weakness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unwxnted/mirai-bot/issues"
+  },
+  "homepage": "https://github.com/unwxnted/mirai-bot#readme"
+}
