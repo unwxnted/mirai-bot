@@ -1,4 +1,5 @@
 const embed = require("./embed.js");
+const config = require("../../config.json");
 
 module.exports = {
 
@@ -22,7 +23,7 @@ module.exports = {
         }
 
         for(var i = 0; i < names.length; i++){
-            helpMessage = helpMessage + "m!" + names[i] + " : " + descriptions[i] + " \n";
+            helpMessage = helpMessage + config.prefix + names[i] + " : " + descriptions[i] + " \n";
         }
 
         embed.execute(client, message, `Commands: `, "#43960C", `${helpMessage}`);
