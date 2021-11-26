@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const images = require("../../images.js");
-const errorEmbed = require("../normal/errorEmbed.js");
+const embed = require("../normal/embed.js");
 
 module.exports = {
 
@@ -17,29 +17,20 @@ module.exports = {
 
                 member.ban().then((member) => {
 
-                    let embed = new Discord.MessageEmbed()
-                    .setTitle(member.displayName + " Has Been Banned")
-                    .setColor("#33FF00")
-                    .setDescription(member.displayName + " Has Been Banned By " + message.author.username)
-                    .setFooter("Developed By weakness", client.user.avatarURL)
-                    .setImage(images.Banned)
-                    .setThumbnail(message.author.avatarURL)
-
-                    message.channel.send({ embeds: [embed] })
-
+                    embed.execute(client, message, member.displayName + " Has Been Banned", "#33FF00", member.displayName + " Has Been Banned By " + message.author.username, images.Banned);
 
 
                 }).catch(() => {
-                    errorEmbed.execute(client, message, "AN ERROR HAS HAPPENED");
+                    embed.execute(client, message, "ERROR", "#AE0028", "You Dont have Access to this Action", images.ErrorIMAGE);
 
                 });
     
             }else{
-                errorEmbed.execute(client, message, "You Dont have Access to this Action");
+                embed.execute(client, message, "ERROR", "#AE0028", "You Dont have Access to this Action", images.ErrorIMAGE);
             }
 
         }else{
-            errorEmbed.execute(client, message, "Please mention a member");
+            embed.execute(client, message, "ERROR", "#AE0028", "Please mention a member", images.ErrorIMAGE);
         }
     }
 

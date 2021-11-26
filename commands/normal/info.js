@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const errorEmbed = require("./errorEmbed.js");
+const embed = require("./embed.js");
 
 function formatDate(date) {
     return new Intl.DateTimeFormat('en-US').format(date)
@@ -26,28 +26,11 @@ module.exports = {
             const isBOT = member.user.bot;
             const avatarURL = "https://cdn.discordapp.com/avatars/"+member.id+"/"+member.user.avatar+".jpeg"
 
-            const presenceGame = "No presence game.";
-            if(member.user.presence.game){
-                const presenceGame = member.user.presence.game.name;
-            }
-                
-        
-            const embed = new Discord.MessageEmbed()
-            .setTitle(`Info of ${name}`)
-            .setColor("#43960C")
-            .setDescription(`Name: ${name} \nCreated date: ${created} \nJoined date: ${joined} \nTag: ${userTAG} \nDiscriminator: ${discriminator} \nUser ID: ${userID} \nBot: ${isBOT} \nPresence Game: ${presenceGame} \nAvatar: `)
-            /*.addField(`name: ${name}`)
-            .addField(`created date: ${created}`)
-            .addField(`joined date: ${joined}`)
-            .addField(`roles: ${roles}`)
-            .addField(`avatar: `)*/
-            .setImage(avatarURL)
-            .setFooter("Developed By weakness")
-            
-            message.channel.send({ embeds: [embed] })
+           
+            embed.execute(client, message, `Info of ${name}`, "#43960C", `Name: ${name} \nCreated date: ${created} \nJoined date: ${joined} \nTag: ${userTAG} \nDiscriminator: ${discriminator} \nUser ID: ${userID} \nBot: ${isBOT} \nAvatar: `, avatarURL);
         
         }else{
-            errorEmbed.execute(client, message, "Please mention a member");
+            embed.execute(client, message, "ERROR", "#AE0028", "Please mention a member", images.ErrorIMAGE);
         }
 
         

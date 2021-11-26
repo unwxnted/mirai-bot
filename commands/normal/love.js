@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const images = require("../../images.js");
-const errorEmbed = require("./errorEmbed.js");
+const embed = require("./embed.js");
 
 module.exports = {
 
@@ -29,18 +29,10 @@ module.exports = {
     
             }
     
-            let embed = new Discord.MessageEmbed()
-            .setTitle(`Love percent: ${lovePercent}%`)
-            .setColor("#FF007F")
-            .setDescription(`${loved.displayName} and ${message.author.username} : ${messageOfLove }`)
-            .setFooter("Developed By weakness", client.user.avatarURL)
-            .setThumbnail()
-            .setImage(imageOfLove)
-                
-            message.channel.send({ embeds: [embed] })
+            embed.execute(client, message, `Love percent: ${lovePercent}%`, "#FF007F", `${loved.displayName} and ${message.author.username} : ${messageOfLove }`, imageOfLove);
         
         }else{
-            errorEmbed.execute(client, message, "Please mention a member");
+            embed.execute(client, message, "ERROR", "#AE0028", "Please mention a member", images.ErrorIMAGE);
         }
 
     

@@ -2,16 +2,16 @@ const Discord = require("discord.js");
 const images = require("../../images.js");
 module.exports = {
 
-    name: "errorMessage",
-    description: "send a error message.",
-    execute(client, message, string){
+    name: "embedMessage",
+    description: "send a embed message.",
+    execute(client, message, title, color ,description, image){
 
         let embed = new Discord.MessageEmbed()
-        .setTitle("ERROR")
-        .setColor("#AE0028")
-        .setDescription(string)
+        .setTitle(title)
+        .setColor(color) // verde: #43960C rojo: #AE0028
+        .setDescription(description)
         .setFooter("Developed By weakness", client.user.avatarURL)
-        .setImage(images.ErrorIMAGE)
+        .setImage(image)
         .setThumbnail(message.author.avatarURL)
     
         message.channel.send({ embeds: [embed] })

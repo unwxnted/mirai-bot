@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const cheerio = require("cheerio");
 const request = require("request-promise");
+const embed = require("./embed.js");
 
 module.exports = {
 
@@ -28,15 +29,7 @@ module.exports = {
             newLinks = newLinks + `https://ww1.animeflv.cc${links[i].link}` + "\n";
         }
 
-        let embed = new Discord.MessageEmbed()
-            .setTitle(`New anime episodes:`)
-            .setColor("#43960C")
-            .setDescription(`${newLinks}`)
-            .setFooter("Developed By weakness", client.user.avatarURL)
-            .setThumbnail()
-            .setImage()
-                
-            message.channel.send({ embeds: [embed] })
+        embed.execute(client, message, `New anime episodes:`, "#43960C", `${newLinks}`);
 
 
     }

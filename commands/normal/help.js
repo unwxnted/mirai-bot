@@ -1,3 +1,4 @@
+const embed = require("./embed.js");
 
 module.exports = {
 
@@ -24,15 +25,7 @@ module.exports = {
             helpMessage = helpMessage + "m!" + names[i] + " : " + descriptions[i] + " \n";
         }
 
-        let embed = new Discord.MessageEmbed()
-            .setTitle(`Commands: `)
-            .setColor("#43960C")
-            .setDescription(`${helpMessage}`)
-            .setFooter("Developed By weakness", client.user.avatarURL)
-            .setThumbnail()
-            .setImage()
-                
-            message.channel.send({ embeds: [embed] })
+        embed.execute(client, message, `Commands: `, "#43960C", `${helpMessage}`);
 
     }
 
