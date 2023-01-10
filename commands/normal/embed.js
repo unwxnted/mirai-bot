@@ -8,9 +8,9 @@ module.exports = {
 
         let embed = new Discord.MessageEmbed()
         .setTitle(title)
-        .setColor(color) // verde: #43960C rojo: #AE0028
+        .setColor(color)
         .setDescription(description)
-        .setFooter("Developed By weakness", client.user.avatarURL)
+        .setFooter("Developed By Unwxnted", client.user.avatarURL)
         .setImage(image)
         .setThumbnail(message.author.avatarURL)
     
