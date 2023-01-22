@@ -1,4 +1,3 @@
-const Discord = require("discord.js");
 const cheerio = require("cheerio");
 const request = require("request-promise");
 const embed = require("./embed.js");
@@ -29,7 +28,7 @@ module.exports = {
             newLinks = newLinks + `https://ww1.animeflv.cc${links[i].link}` + "\n";
         }
 
-        embed.execute(client, message, `New anime episodes:`, "#43960C", `${newLinks}`);
+        return embed.execute(client, message, `New anime episodes:`, "#43960C", `${newLinks}`);
 
 
     }

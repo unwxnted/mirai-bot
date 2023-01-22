@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports.ErrorIMAGE = ErrorIMAGE = "https://pa1.narvii.com/6502/441d80aa2aa06396b7c2a523bd3e1368fbfca596_hq.gif";
 module.exports.Kicked = Kicked = "https://i.pinimg.com/originals/b1/94/a9/b194a9ce557297165aafc3046a671744.gif";
 module.exports.Banned = Banned = "https://media1.tenor.com/images/0a73a5789c3f8780be523171229e471e/tenor.gif?itemid=15493513";

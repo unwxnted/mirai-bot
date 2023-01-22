@@ -1,5 +1,3 @@
-
-
 module.exports = {
 
     name: "say",
@@ -13,7 +11,7 @@ module.exports = {
             say = say + " " + args[i];
         }
         
-        message.channel.send(say);
+        return message.channel.send(say);
 
     }
 

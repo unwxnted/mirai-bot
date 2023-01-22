@@ -26,7 +26,7 @@ module.exports = {
             helpMessage = helpMessage + config.prefix + names[i] + " : " + descriptions[i] + " \n";
         }
 
-        embed.execute(client, message, `Commands: `, "#43960C", `${helpMessage}`);
+        return embed.execute(client, message, `Commands: `, "#43960C", `${helpMessage}`);
 
     }
 

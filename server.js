@@ -9,7 +9,7 @@ const {
 const commands = require("./commands/commands.js")
 
 client.once("ready", () => {
-    console.log("ACTIVED");
+    console.log("Bot Online");
 });
 
 client.once('reconnecting', () => {
@@ -20,17 +20,19 @@ client.once('disconnect', () => {
 	console.log('Disconnect!');
 });
 
-client.on(("message"), (message) => {
+try{
+    client.on(("messageCreate"), (message) => {
     
 
-    for(var i = 0; i < commands.length; i++){
-
-        if(message.content.startsWith(prefix + commands[i].name)){
-            commands[i].execute(client, message);
+        for(var i = 0; i < commands.length; i++){
+    
+            if(message.content.startsWith(prefix + commands[i].name)){
+                commands[i].execute(client, message);
+            }
+    
         }
-
-    }
-
-})
-
+    
+    })
+}catch(err) {console.log(err);}
+	
 client.login(token);
